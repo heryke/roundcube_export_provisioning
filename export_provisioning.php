@@ -178,10 +178,24 @@ class export_provisioning extends rcube_plugin
 		 }
 	}
 
+    public function apply_plugin_config()
+    {
+        $c = array(
+            'IncomingMailServerHostName', 'IncomingMailServerPortNumber', 'IncomingMailServerUseSSL', 'OutgoingMailServerHostName', 'OutgoingMailServerPortNumber', 'OutgoingMailServerUseSSL', 'OutgoingMailServerAuthentication');
+
+        $this->load_config();
+
+        foreach ($c as $item) {
+            if ($v = $this->rcmail->config->get($item, $this->data[$item])) {
+                $this->data[$item] = $v;
+            }
+        }
+    }
 
 	public function ios()
 	{
 		$this->get_config_values();
+        $this->apply_plugin_config();
 		$text = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -292,6 +306,7 @@ class export_provisioning extends rcube_plugin
 
 	public function iaf($filename) {
 		$this->get_config_values();
+        $this->apply_plugin_config();
 		$iaf = new File_Format_Iaf();
 		$iaf->__set('AccountName',$this->data['email']);
 		$iaf->__set('IMAPServer',$this->data['IncomingMailServerHostName']);

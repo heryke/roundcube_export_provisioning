@@ -1,0 +1,28 @@
+<?php
+
+// Incoming server name
+//$config['IncomingMailServerHostName'] = '';
+
+// Port number for incoming server
+//$config['IncomingMailServerPortNumber'] = 143;
+
+// SSL usage configuration for incoming server:
+// 1 - SSL active
+// 2 - no SSL
+//$config['IncomingMailServerUseSSL']  = '1';
+
+// Outgoing server name
+//$config['OutgoingMailServerHostName'] = '';
+
+// Port number for outgoing server
+//$config['OutgoingMailServerPortNumber'] = 25;
+
+// SSL usage configuration for outgoing server:
+// 1 - SSL active
+// 2 - no SSL
+//$config['OutgoingMailServerUseSSL']  = '1';
+
+// Outgoing mailserver authentication
+// - EXPORT_PROVISIONING_SMTPAUTH_NONE
+// - EXPORT_PROVISIONING_SMTPAUTH_PLAIN
+//$config['OutgoingMailServerAuthentication']  = EXPORT_PROVISIONING_SMTPAUTH_NONE;

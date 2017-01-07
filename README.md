@@ -11,6 +11,9 @@ You can find a new settings tab named "Provisioning". From there you only have t
 One download link is generating a .mobileconfig file, suitable for iOS / OSX devices.
 The other download link is generating a .iaf file, suitable for Outlook Express and Windows Live Mail.
 
+## Plugin configuration
+Plugin configuration is optional. If you need it, you can create a config.inc.php file inside the plugin folder, to alter parameters like IMAP or SMTP host and port. See config.inc.php.dist as an example.
+
 ## iOS provisioning
 Send the .mobileconfig file via email (it's not working via iMessage), then open it. The device will ask for confirmation before installing the profile, that will appear as unsigned. Just click on "Install" and enter the access code if asked. Another confirmation is needed, so click in "Install" again. And... guess what? iOS is asking a third time if you really want to install. Click "Install", wait some seconds for installing, then click on "End".
 
@@ -28,9 +31,8 @@ Just open the file, the profile installation will ask you for confirmation two t
 - Fork and pull requests are also welcome.
 
 ## TODO
-- More localization (currently only english and italian).
+- More localization.
 - Option for sending the provisioning file via email.
 
 ## License
 See the LICENSE file.
-
